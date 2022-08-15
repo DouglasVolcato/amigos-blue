@@ -14,6 +14,16 @@ array = [
     personalWebpage:
       "https://douglasvolcato.github.io/portfolio-DouglasVolcato/",
   },
+  {
+    name: "Renato Tenório",
+    specialty: "Fullstack",
+    class: "C017",
+    githubUser: "RenatoTl",
+    image: "https://avatars.githubusercontent.com/u/103604513?v=4",
+    likedIn: "https://www.linkedin.com/in/renato-ten%C3%B3rio-93a972156/",
+    personalWebpage:
+      "Ainda não tenho.",
+  },
 ];
 
 //Função para mostrar os cards com base no array de cadastros
