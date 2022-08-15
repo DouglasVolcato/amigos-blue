@@ -1,6 +1,7 @@
 //Para contribuir, insira um objeto com suas informações dentro do array
 //De preferência uma foto quadrada para seguir o padrão
 //Pestar atenção nas letras maiúsculas e minúsculas no githubUser
+//Caso não tenha página pessoal, pode deixar em branco (personalWebpage: "",)
 
 //Array com os objetos de cada pessoa cadastrada
 array = [
@@ -21,8 +22,7 @@ array = [
     githubUser: "RenatoTl",
     image: "https://avatars.githubusercontent.com/u/103604513?v=4",
     likedIn: "https://www.linkedin.com/in/renato-ten%C3%B3rio-93a972156/",
-    personalWebpage:
-      "Ainda não tenho.",
+    personalWebpage: "",
   },
 ];
 
@@ -72,7 +72,6 @@ showCards();
 
 //Função para mostrar mais informações quando clicado no card
 function showInfo(position) {
-
   //"for of" para limpar a página de outros cards e header
   for (let n of document.querySelectorAll(".card")) {
     n.style.display = "none";
@@ -112,9 +111,13 @@ function showInfo(position) {
       </div>
 
       <div class="socialNetworks">
-        <a href="https://github.com/${array[position].githubUser}" target="_blank"><img src="./assets/pictures/githubLogo.png" alt="Github"></a> 
-        <a href="${array[position].likedIn}" target="_blank"><img src="./assets/pictures/linkedInLogo.jpg" alt="LinkedIn"></a>
-        <a href="${array[position].personalWebpage}" target="_blank"><img src="./assets/pictures/personalSiteLogo.png" alt="Personal site"></a>
+        <a href="https://github.com/${
+          array[position].githubUser
+        }" target="_blank"><img src="./assets/pictures/githubLogo.png" alt="Github"></a> 
+        <a href="${
+          array[position].likedIn
+        }" target="_blank"><img src="./assets/pictures/linkedInLogo.jpg" alt="LinkedIn"></a>
+        ${getPersonalWebpage(position)}
       </div>
 
       <div class="githubApi">
@@ -131,6 +134,14 @@ function showInfo(position) {
   //Função assíncrona para consumir a api do GitHub e mostrar os repositórios
   //Função definida mais abaixo
   getRepositorys(array[position].githubUser);
+}
+
+//Mostrar imagem com link para página pessoal(ou não mostrar, caso não haja um link no cadastro)
+function getPersonalWebpage(position) {
+  const webpageLink = array[position].personalWebpage;
+  if (webpageLink)
+    return `<a href="${webpageLink}" target="_blank"><img src="./assets/pictures/personalSiteLogo.png" alt="Personal site"></a>`;
+  return "";
 }
 
 //Consumir api do Github e buscar repositórios
