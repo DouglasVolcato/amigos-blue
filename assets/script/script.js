@@ -24,6 +24,15 @@ array = [
     likedIn: "https://www.linkedin.com/in/renato-ten%C3%B3rio-93a972156/",
     personalWebpage: "",
   },
+  {
+    name: "Vanderlei Miguel",
+    specialty: "Fullstack",
+    class: "C017",
+    githubUser: "vanderleimiguel",
+    image: "https://avatars.githubusercontent.com/u/102632196?v=4",
+    likedIn: "https://www.linkedin.com/in/vanderleimiguel/",
+    personalWebpage: "https://vanderleimiguel.herokuapp.com/",
+  },
 ];
 
 //Função para mostrar os cards com base no array de cadastros
