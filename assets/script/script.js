@@ -33,6 +33,16 @@ array = [
     likedIn: "https://www.linkedin.com/in/vanderleimiguel/",
     personalWebpage: "https://vanderleimiguel.herokuapp.com/",
   },
+  {
+    name: "Tiago Lelis",
+    specialty: "Fullstack with more backEnd experience",
+    class: "C013",
+    githubUser: "magura13",
+    image: "https://avatars.githubusercontent.com/u/97927253?v=4",
+    likedIn: "https://www.linkedin.com/in/tiago-lelis-240286161/",
+    personalWebpage:
+      "https://github.com/magura13",
+  },
 ];
 
 //Função para mostrar os cards com base no array de cadastros
