@@ -61,6 +61,15 @@ array = [
 		likedIn: 'https://www.linkedin.com/in/jardejane-feitosa-lima-60a6851a4/',
 		personalWebpage: 'https://jardejane.github.io/Perfil/portifolio/portifolio.html',
 	},
+	{
+		name: 'Wanderson Gomes dos Santos',
+		specialty: 'Backend Developer',
+		class: 'C005',
+		githubUser: 'wandersonDeve',
+		image: 'https://avatars.githubusercontent.com/u/81826043?s=96&v=4',
+		likedIn: 'https://www.linkedin.com/in/wandersongsantos/',
+		personalWebpage: 'https://github.com/wandersonDeve',
+	},
 ];
 
 //Função para mostrar os cards com base no array de cadastros
