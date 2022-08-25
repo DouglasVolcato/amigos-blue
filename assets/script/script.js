@@ -52,6 +52,15 @@ array = [
 		personalWebpage:
 			'https://raulmn00.github.io/Projeto-Um-Modulo-Dois-Portifolio/',
 	},
+	{
+		name: 'Jardejane Feitosa Lima',
+		specialty: 'Full Stack Developer',
+		class: 'C017',
+		githubUser: 'Jardejane',
+		image: 'https://avatars.githubusercontent.com/u/106411484?v=4',
+		likedIn: 'https://www.linkedin.com/in/jardejane-feitosa-lima-60a6851a4/',
+		personalWebpage: 'https://jardejane.github.io/Perfil/portifolio/portifolio.html',
+	},
 ];
 
 //Função para mostrar os cards com base no array de cadastros
