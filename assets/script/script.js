@@ -6,6 +6,16 @@
 //Array com os objetos de cada pessoa cadastrada
 array = [
 	{
+		name: 'Adam Teodoro',
+		specialty: 'Fullstack(nodejs, angular, react, js, ts, mobiledev)',
+		class: 'C017',
+		githubUser: 'AdamTeodoro',
+		image: 'https://avatars.githubusercontent.com/u/66885644?s=400&u=08da0bb89477df9db6a76a68f8a7dff928a1a42b&v=4',
+		likedIn: 'https://github.com/AdamTeodoro',
+		personalWebpage:
+			'https://github.com/AdamTeodoro',
+	},
+	{
 		name: 'Douglas Volcato',
 		specialty: 'Fullstack',
 		class: 'C017',
@@ -69,7 +79,7 @@ array = [
 		image: 'https://avatars.githubusercontent.com/u/81826043?s=96&v=4',
 		likedIn: 'https://www.linkedin.com/in/wandersongsantos/',
 		personalWebpage: 'https://github.com/wandersonDeve',
-	},
+	}
 ];
 
 //Função para mostrar os cards com base no array de cadastros
@@ -83,10 +93,10 @@ function showCards() {
 		document.querySelector('header').insertAdjacentHTML(
 			'beforeend',
 			`
-      <div>
-        <img src="./assets/pictures/pageLogo.png" alt="Logo Page" />
-        <h1>Amigos Blue</h1>
-      </div>
+		<div class='title'>
+			<img src="./assets/pictures/pageLogo.png" alt="Logo Page" />
+			<h1>AMIGOS BLUE</h1>
+		</div>
       `
 		);
 
@@ -94,20 +104,20 @@ function showCards() {
 		document.querySelector('main').insertAdjacentHTML(
 			'beforeend',
 			`
-      <div
-      class="card"
-      onclick='showInfo(${array.indexOf(item)})'>
-      <img
-        src=${item.image}
-        alt="image"
-      />
-      <div class="info">
-        <p class="name">${item.name}</p>
-        <p class="speciality">${item.specialty}</p>
-        <p class="class">${item.class}</p>
-      </div>
+			<div
+				class="card"
+				onclick='showInfo(${array.indexOf(item)})'>
+					<img
+						src=${item.image}
+						alt="image"
+					/>
+				<div class="info">
+					<p class="name">${item.name}</p>
+					<p class="speciality">${item.specialty}</p>
+					<p class="class">${item.class}</p>
+				</div>
   
-    </div>
+			</div>
       `
 		);
 	}
@@ -130,12 +140,17 @@ function showInfo(position) {
 	document.querySelector('header').insertAdjacentHTML(
 		'beforeend',
 		`
-    <a class="exitButton" href="./index.html">
-      <div onclick="showCards()">
-        <img src="./assets/pictures/pageLogoRed.png" alt="Logo Page" />
-        <h1 style="color:red">Voltar</h1>
-      </div>
-    </a>
+		<a class="exitButton" href="./index.html">
+			<div class="menu-complete-info" onclick="showCards()">
+				<img src="./assets/pictures/pageLogoRed.png" alt="Logo Page" />
+				<h1>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+					</svg>
+					Voltar
+				</h1>
+			</div>
+		</a>
     `
 	);
 
@@ -144,36 +159,41 @@ function showInfo(position) {
 		'beforeend',
 		`
    
-    <div class="completeInfo">
-      <div class="introduction">
-        <img src=${array[position].image} alt="image"/>
+		<div class="completeInfo">
+			<div class="introduction">
+				<img src=${array[position].image} alt="image"/>
 
-        <div class="info">
-          <p class="name">Nome: ${array[position].name}</p>
-          <p class="speciality">Especialidade: ${array[position].specialty}</p>
-          <p class="class">Classe: ${array[position].class}</p>
-        </div>
+				<div class="info">
+					<p class="name">Nome: ${array[position].name}</p>
+					<p class="speciality">Especialidade: ${array[position].specialty}</p>
+					<p class="class">Classe: ${array[position].class}</p>
+				</div>
 
-      </div>
+			</div>
 
-      <div class="socialNetworks">
-        <a href="https://github.com/${
-			array[position].githubUser
-		}" target="_blank"><img src="./assets/pictures/githubLogo.png" alt="Github"></a> 
-        <a href="${
-			array[position].likedIn
-		}" target="_blank"><img src="./assets/pictures/linkedInLogo.jpg" alt="LinkedIn"></a>
-        ${getPersonalWebpage(position)}
-      </div>
+			<div class="social-networks">
+				<div class="social-item">
+					<a href="https://github.com/${
+						array[position].githubUser
+					}" target="_blank"><img src="./assets/pictures/githubLogo.png" alt="Github"></a> 
+				<div class="social-item">
+						<a href="${
+						array[position].likedIn
+					}" target="_blank"><img src="./assets/pictures/linkedInLogo.jpg" alt="LinkedIn"></a>
+				</div>
+				<div class="social-item">
+					${getPersonalWebpage(position)}
+				</div>
+			</div>
 
-      <div class="githubApi">
-        <h2>Projetos</h2>
+			<div class="githubApi">
+				<h2>Projetos</h2>
 
-        <div class="repositoryList">
-        </div>
+				<div class="repositoryList">
+				</div>
 
-      </div>
-    </div>
+			</div>
+		</div>
     `
 	);
 

@@ -1,464 +1,326 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
+body,html, main {
+    margin: 0px;
+    padding: 0px;
 }
-html{
-    background-color: rgb(56, 82, 223);
-    width: 100%;
-    height: 100%;
-    padding: 2%;
-}
-body{
+
+main {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-header, footer{
-    color: rgb(43, 62, 170);
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    height: 7vw;
-    border: solid 0.5vw rgb(73, 93, 204);
-}
-header div{
-    height: 5vw;
-    display: flex;
-    margin: auto;
-}
-h1{
-    font-size: 4vw;
-}
-header img{
-    height: 5vw;
-}
-main{
-    margin: 1vw 0 1vw 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
     flex-wrap: wrap;
 }
-div.card{
-    margin: 1.5vw;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    width: 20vw;
-    height: 30vw;
-    font-size: 2vw;
+
+.card {
+    cursor: pointer;
+
+    border: none;
+    border-radius: 1px;
+
+    margin-left: 1.5%;
+    margin-top: 2%;
+
+    box-shadow: 0 0 2em #444;
+
+    padding: 1%;
+
+    width: 14%;
+    height: 300px ;
+    
+    position: relative;
+
+    background-color: #09003a;
+
+    padding: 2%;
+
     text-align: center;
-    border-radius: 4%;
-    border: solid 0.5vw white;
-}
-div.card:hover{
-    border: solid 0.5vw yellow;
-    background-color: rgb(56, 82, 223);
-    color: white;
-}
-div.card .name{
+    color: #fff;
     font-weight: bold;
+    font-size: 10pt;
+
+    transition: 500ms;
+
 }
-div.card .info{
-    margin: auto;
+
+.card:hover {
+
+    margin-top: 1%;
+    
+    height: calc(auto - 1%);
 }
-div.card img{
-    margin: auto;
-    height: 18vw;
-    width: 18vw;
-    border-radius: 3%;
-    border: solid 0.2vw rgb(0, 94, 255);
+
+.card .name {
+    font-size: 14pt;
 }
-div.card .class{
-    font-size: 1.4vw;
+
+.card .info {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10%;
+
+    border-top: 0.2px solid #aaa;
+    
 }
-footer a{
-    bottom: 0;
-    margin: auto;
-    font-size: 2vw;
+
+.card img {
+    
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    display: block;
 }
-.exitButton{
-    text-decoration: none;
+
+.title {
+    font-size: 24pt;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
 }
-div.completeInfo{
-    color: white;
-    font-size: 2vw;
+
+.title h1 {
+    margin-top: -10px;
 }
-div.completeInfo .introduction{
-    width: 90vw;
+
+
+/* 
+    start screen complete info
+*/
+
+.completeInfo {
+    width: 100%;
+    padding: 3%;
+}
+
+.completeInfo .introduction {
+    width: 90%;
+
+    background-color: #09003a;
+
+    padding: 5%;
+
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    color: #fff;
+
+    border-radius: 2px;
 }
-div.completeInfo img{
-    margin: auto;
-    height: 20vw;
-    width: 20vw;
-    border-radius: 5%;
-    border: solid 0.4vw rgb(192, 196, 54);
+
+
+.completeInfo .introduction:hover {
+
+    transition: 200ms;
+    
+    background-color: #fff;
+    
+    color: #09003a !important;
+
+    border: 1px solid #09003a;
+
 }
-div.completeInfo .info{
-    margin: auto auto auto 1.5vw;
+
+
+.completeInfo img {
+    max-width: 200px;
 }
-div.completeInfo .socialNetworks{
-    width: 90vw;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 4vw;
+
+.completeInfo .info {
+    width: 60%;
+    margin-left: 10%;
+
+    /* color: #fff; */
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-div.completeInfo .socialNetworks img{
-    border: solid 0.3vw blue;
-    border-radius: 13%;
-    height: 15vw;
-    width: 15vw;
+
+.completeInfo {
+    width: 90%;
+
+    margin-left: 5%;
+
+    font-size: 20pt;
+    color: #333;
 }
-div.githubApi{
-    background-color: aliceblue;
-    color: rgb(2, 2, 173);
-    font-size: 2.5vw;
-    padding: 2vw;
-    margin: 2.5vw;
-    border: solid 0.5vw gray;
+
+
+.social-networks {
+
+    width: 100%;
+
+    height: auto;
+
+    position: relative;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
 }
-div.githubApi button{
-    font-size: 2vw;
-    padding: 0.3vw;
-    background-color: rgb(93, 93, 93);
-    color: white;
-    padding: 0.5vw;
-    border-radius: 4%;
+
+.social-item {
+    width: 30%;
+
+    margin-left: 5%;
+
+    max-width: 30%;
 }
-div.githubApi button:hover{
-    background-color: blue;
+
+.social-item img {
+    width: 100px;
+    height: auto;
+}
+
+.githubApi {
+    width: 50%;
+}
+
+.repositoryList div {
+    font-size: 11pt; 
+
+    margin-top: 2%;
+}
+
+.repositoryList button {
+    padding: 10%;
+
+    border: none;
+
+    color: #fff;
+
+    background-color: #09003a;
+
     cursor: pointer;
 }
-div.repositoryList{
-    display: flex;
-    flex-direction: column;
+
+.repositoryList button {
+    padding: 10%;
+
+    border: none;
+
+    color: #fff;
+
+    background-color: #09003a;
+
+    cursor: pointer;
 }
-h2{
+
+.repositoryList button:hover {
+
+    transition: 200ms;
+    
+    color: #09003a;
+    
+    background-color: #fff;
+
+    border: 1px solid #09003a;
+
+}
+
+footer {
+    width: 70%;
+    position: relative;
+
+    margin-left: 15%;
+    margin-top: 5%;
+
+    padding-top: 1%;
+    padding-bottom: 2%;
+    
     text-align: center;
-    font-size: 3vw;
-    margin-bottom: 3vw;
-}
-.repositoryList section{
-    display: flex;
-    justify-content: space-between;
-    margin: 1vw;
-    border: solid 0.14vw;
+
+    border-top: #222 solid 2px;
 }
 
-@media(max-width: 700px){
-    *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif;
+footer a {
+    color: #0b0035;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+footer .bi-github {
+    color: #fff;
+}
+
+footer .btn-git {
+    padding: 2px;
+
+    background-color: #0b0035;
+    border: none !important;
+}
+
+@media (max-width: 900px) {
+    .card {
+        width: 25%;
+        margin-left: 2.5%;
     }
-    html{
-        background-color: rgb(56, 82, 223);
-        width: 100%;
-        height: 100%;
-        padding: 1%;
-    }
-    body{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-    }
-    header, footer{
-        color: rgb(43, 62, 170);
-        display: flex;
-        justify-content: center;
-        background-color: white;
-        height: 8vw;
-        border: solid 0.5vw rgb(73, 93, 204);
-    }
-    header div{
-        height: 5vw;
-        display: flex;
-        margin: auto;
-    }
-    h1{
-        font-size: 5vw;
-    }
-    header img{
-        height: 5vw;
-    }
-    main{
-        margin: 1vw 0 1vw 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
-    div.card{
-        margin: 1.5vw;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content:space-around;
-        width: 30vw;
-        height: 40vw;
-        font-size: 3vw;
-        text-align: center;
-        border-radius: 4%;
-        border: solid 0.5vw white;
-    }
-    div.card:hover{
-        border: solid 0.5vw yellow;
-        background-color: rgb(56, 82, 223);
-        color: white;
-    }
-    div.card .name{
-        font-weight: bold;
-    }
-    div.card .info{
-        margin: auto;
-    }
-    div.card img{
-        margin: auto;
-        height: 25vw;
-        width: 25vw;
-        border-radius: 3%;
-        border: solid 0.2vw rgb(0, 94, 255);
-    }
-    div.card .class{
-        font-size: 2.3vw;
-    }
-    footer a{
-        bottom: 0;
-        margin: auto;
-        font-size: 3vw;
-    }
-    .exitButton{
-        text-decoration: none;
-    }
-    div.completeInfo{
-        color: white;
-        font-size: 3vw;
-    }
-    div.completeInfo .introduction{
-        width: 90vw;
-        display: flex;
-        justify-content: center;
-    }
-    div.completeInfo img{
-        margin: auto;
-        height: 30vw;
-        width: 30vw;
-        border-radius: 5%;
-        border: solid 0.4vw rgb(192, 196, 54);
-    }
-    div.completeInfo .info{
-        margin: auto auto auto 1.5vw;
-    }
-    div.completeInfo .socialNetworks{
-        width: 90vw;
-        display: flex;
-        justify-content: space-evenly;
-        margin: 4vw;
-    }
-    div.completeInfo .socialNetworks img{
-        border: solid 0.3vw blue;
-        border-radius: 13%;
-        height: 15vw;
-        width: 15vw;
-    }
-    div.githubApi{
-        background-color: aliceblue;
-        color: rgb(2, 2, 173);
-        font-size: 3vw;
-        padding: 2vw;
-        margin: 2.5vw;
-        border: solid 0.5vw gray;
-    }
-    div.githubApi button{
-        font-size: 3vw;
-        padding: 0.3vw;
-        background-color: rgb(93, 93, 93);
-        color: white;
-        padding: 0.5vw;
-        border-radius: 4%;
-        min-width: 25vw;
-    }
-    div.githubApi button:hover{
-        background-color: blue;
-        cursor: pointer;
-    }
-    div.repositoryList{
-        display: flex;
-        flex-direction: column;
-    }
-    h2{
-        text-align: center;
-        font-size: 4vw;
-        margin-bottom: 3vw;
-    }
-    .repositoryList section{
-        display: flex;
-        justify-content: space-between;
-        margin: 1vw;
-        border: solid 0.14vw;
+
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 40%;
+        margin-left: 4%;
     }
 }
 
-@media(max-width: 500px){
-    *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif;
+@media (max-width: 400px) {
+    .title h1 {
+        margin-top: 2%;
+
+        font-size: 20pt;
     }
-    html{
-        background-color: rgb(56, 82, 223);
+
+    .card {
+        width: 90%;
+        margin-left: 2.5%;
+    }
+
+    .introduction {
+        width: 90%;
+
+        padding: 1px;
+
+        font-size: 12pt;
+    }
+
+    .social-networks {
         width: 100%;
-        height: 100%;
-        padding: 1%;
+
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+
+        display: block;
+
+        margin-left: auto;
+        margin-right: auto;
     }
-    body{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
+
+    .introduction img {
+        width: 120px;
+        
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
-    header, footer{
-        color: rgb(43, 62, 170);
-        display: flex;
-        justify-content: center;
-        background-color: white;
-        height: 11vw;
-        border: solid 0.5vw rgb(73, 93, 204);
+
+    .social-item img {
+        width: 80px;
+        height: auto;
     }
-    header div{
-        height: 7vw;
-        display: flex;
-        margin: auto;
+    
+    .menu-complete-info h1 {
+        font-size: 12pt;
+        color: #333;
     }
-    h1{
-        font-size: 7vw;
-    }
-    header img{
-        height: 7vw;
-    }
-    main{
-        margin: 1vw 0 1vw 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
-    div.card{
-        margin: 1.5vw;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content:space-around;
-        width: 45vw;
-        height: 60vw;
-        font-size: 4.5vw;
-        text-align: center;
-        border-radius: 4%;
-        border: solid 0.5vw white;
-    }
-    div.card:hover{
-        border: solid 0.5vw yellow;
-        background-color: rgb(56, 82, 223);
-        color: white;
-    }
-    div.card .name{
-        font-weight: bold;
-    }
-    div.card .info{
-        margin: auto;
-    }
-    div.card img{
-        margin: auto;
-        height: 40vw;
-        width: 40vw;
-        border-radius: 3%;
-        border: solid 0.2vw rgb(0, 94, 255);
-    }
-    div.card .class{
-        font-size: 3vw;
-    }
-    footer a{
-        bottom: 0;
-        margin: auto;
-        font-size: 5vw;
-    }
-    .exitButton{
-        text-decoration: none;
-    }
-    div.completeInfo{
-        color: white;
-        font-size: 5vw;
-    }
-    div.completeInfo .introduction{
-        width: 90vw;
-        display: flex;
-        justify-content: center;
-    }
-    div.completeInfo img{
-        margin: auto;
-        height: 30vw;
-        width: 30vw;
-        border-radius: 5%;
-        border: solid 0.4vw rgb(192, 196, 54);
-    }
-    div.completeInfo .info{
-        margin: auto auto auto 1.5vw;
-    }
-    div.completeInfo .socialNetworks{
-        width: 90vw;
-        display: flex;
-        justify-content: space-evenly;
-        margin: 4vw;
-    }
-    div.completeInfo .socialNetworks img{
-        border: solid 0.3vw blue;
-        border-radius: 13%;
-        height: 20vw;
-        width: 20vw;
-    }
-    div.githubApi{
-        background-color: aliceblue;
-        color: rgb(2, 2, 173);
-        font-size: 4vw;
-        padding: 2vw;
-        margin: 1vw;
-        border: solid 0.5vw gray;
-    }
-    div.githubApi button{
-        font-size: 2.7vw;
-        padding: 0.1vw;
-        background-color: rgb(93, 93, 93);
-        color: white;
-        padding: 0.2vw;
-        border-radius: 4%;
-        min-width: 25vw;
-    }
-    div.githubApi button:hover{
-        background-color: blue;
-        cursor: pointer;
-    }
-    div.repositoryList{
-        display: flex;
-        flex-direction: column;
-    }
-    h2{
-        text-align: center;
-        font-size: 5vw;
-        margin-bottom: 3vw;
-    }
-    .repositoryList section{
-        display: flex;
-        justify-content: space-between;
-        margin: 1vw;
-        border: solid 0.14vw;
+    
+    .menu-complete-info img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
