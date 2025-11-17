@@ -1,464 +1,328 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
-html{
-    background-color: rgb(56, 82, 223);
-    width: 100%;
-    height: 100%;
-    padding: 2%;
-}
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-header, footer{
-    color: rgb(43, 62, 170);
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    height: 7vw;
-    border: solid 0.5vw rgb(73, 93, 204);
-}
-header div{
-    height: 5vw;
-    display: flex;
-    margin: auto;
-}
-h1{
-    font-size: 4vw;
-}
-header img{
-    height: 5vw;
-}
-main{
-    margin: 1vw 0 1vw 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-div.card{
-    margin: 1.5vw;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    width: 20vw;
-    height: 30vw;
-    font-size: 2vw;
-    text-align: center;
-    border-radius: 4%;
-    border: solid 0.5vw white;
-}
-div.card:hover{
-    border: solid 0.5vw yellow;
-    background-color: rgb(56, 82, 223);
-    color: white;
-}
-div.card .name{
-    font-weight: bold;
-}
-div.card .info{
-    margin: auto;
-}
-div.card img{
-    margin: auto;
-    height: 18vw;
-    width: 18vw;
-    border-radius: 3%;
-    border: solid 0.2vw rgb(0, 94, 255);
-}
-div.card .class{
-    font-size: 1.4vw;
-}
-footer a{
-    bottom: 0;
-    margin: auto;
-    font-size: 2vw;
-}
-.exitButton{
-    text-decoration: none;
-}
-div.completeInfo{
-    color: white;
-    font-size: 2vw;
-}
-div.completeInfo .introduction{
-    width: 90vw;
-    display: flex;
-    justify-content: center;
-}
-div.completeInfo img{
-    margin: auto;
-    height: 20vw;
-    width: 20vw;
-    border-radius: 5%;
-    border: solid 0.4vw rgb(192, 196, 54);
-}
-div.completeInfo .info{
-    margin: auto auto auto 1.5vw;
-}
-div.completeInfo .socialNetworks{
-    width: 90vw;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 4vw;
-}
-div.completeInfo .socialNetworks img{
-    border: solid 0.3vw blue;
-    border-radius: 13%;
-    height: 15vw;
-    width: 15vw;
-}
-div.githubApi{
-    background-color: aliceblue;
-    color: rgb(2, 2, 173);
-    font-size: 2.5vw;
-    padding: 2vw;
-    margin: 2.5vw;
-    border: solid 0.5vw gray;
-}
-div.githubApi button{
-    font-size: 2vw;
-    padding: 0.3vw;
-    background-color: rgb(93, 93, 93);
-    color: white;
-    padding: 0.5vw;
-    border-radius: 4%;
-}
-div.githubApi button:hover{
-    background-color: blue;
-    cursor: pointer;
-}
-div.repositoryList{
-    display: flex;
-    flex-direction: column;
-}
-h2{
-    text-align: center;
-    font-size: 3vw;
-    margin-bottom: 3vw;
-}
-.repositoryList section{
-    display: flex;
-    justify-content: space-between;
-    margin: 1vw;
-    border: solid 0.14vw;
+:root {
+  --bg-primary: linear-gradient(135deg, #172554, #1d4ed8 55%, #38bdf8);
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #2563eb;
+  --accent-strong: #1e40af;
+  --accent-soft: rgba(37, 99, 235, 0.1);
+  --radius-lg: 1.25rem;
+  --radius-md: 0.875rem;
+  --transition: 0.3s ease;
+  font-family: "Poppins", "Roboto", sans-serif;
 }
 
-@media(max-width: 700px){
-    *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif;
-    }
-    html{
-        background-color: rgb(56, 82, 223);
-        width: 100%;
-        height: 100%;
-        padding: 1%;
-    }
-    body{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-    }
-    header, footer{
-        color: rgb(43, 62, 170);
-        display: flex;
-        justify-content: center;
-        background-color: white;
-        height: 8vw;
-        border: solid 0.5vw rgb(73, 93, 204);
-    }
-    header div{
-        height: 5vw;
-        display: flex;
-        margin: auto;
-    }
-    h1{
-        font-size: 5vw;
-    }
-    header img{
-        height: 5vw;
-    }
-    main{
-        margin: 1vw 0 1vw 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
-    div.card{
-        margin: 1.5vw;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content:space-around;
-        width: 30vw;
-        height: 40vw;
-        font-size: 3vw;
-        text-align: center;
-        border-radius: 4%;
-        border: solid 0.5vw white;
-    }
-    div.card:hover{
-        border: solid 0.5vw yellow;
-        background-color: rgb(56, 82, 223);
-        color: white;
-    }
-    div.card .name{
-        font-weight: bold;
-    }
-    div.card .info{
-        margin: auto;
-    }
-    div.card img{
-        margin: auto;
-        height: 25vw;
-        width: 25vw;
-        border-radius: 3%;
-        border: solid 0.2vw rgb(0, 94, 255);
-    }
-    div.card .class{
-        font-size: 2.3vw;
-    }
-    footer a{
-        bottom: 0;
-        margin: auto;
-        font-size: 3vw;
-    }
-    .exitButton{
-        text-decoration: none;
-    }
-    div.completeInfo{
-        color: white;
-        font-size: 3vw;
-    }
-    div.completeInfo .introduction{
-        width: 90vw;
-        display: flex;
-        justify-content: center;
-    }
-    div.completeInfo img{
-        margin: auto;
-        height: 30vw;
-        width: 30vw;
-        border-radius: 5%;
-        border: solid 0.4vw rgb(192, 196, 54);
-    }
-    div.completeInfo .info{
-        margin: auto auto auto 1.5vw;
-    }
-    div.completeInfo .socialNetworks{
-        width: 90vw;
-        display: flex;
-        justify-content: space-evenly;
-        margin: 4vw;
-    }
-    div.completeInfo .socialNetworks img{
-        border: solid 0.3vw blue;
-        border-radius: 13%;
-        height: 15vw;
-        width: 15vw;
-    }
-    div.githubApi{
-        background-color: aliceblue;
-        color: rgb(2, 2, 173);
-        font-size: 3vw;
-        padding: 2vw;
-        margin: 2.5vw;
-        border: solid 0.5vw gray;
-    }
-    div.githubApi button{
-        font-size: 3vw;
-        padding: 0.3vw;
-        background-color: rgb(93, 93, 93);
-        color: white;
-        padding: 0.5vw;
-        border-radius: 4%;
-        min-width: 25vw;
-    }
-    div.githubApi button:hover{
-        background-color: blue;
-        cursor: pointer;
-    }
-    div.repositoryList{
-        display: flex;
-        flex-direction: column;
-    }
-    h2{
-        text-align: center;
-        font-size: 4vw;
-        margin-bottom: 3vw;
-    }
-    .repositoryList section{
-        display: flex;
-        justify-content: space-between;
-        margin: 1vw;
-        border: solid 0.14vw;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media(max-width: 500px){
-    *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif;
-    }
-    html{
-        background-color: rgb(56, 82, 223);
-        width: 100%;
-        height: 100%;
-        padding: 1%;
-    }
-    body{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-    }
-    header, footer{
-        color: rgb(43, 62, 170);
-        display: flex;
-        justify-content: center;
-        background-color: white;
-        height: 11vw;
-        border: solid 0.5vw rgb(73, 93, 204);
-    }
-    header div{
-        height: 7vw;
-        display: flex;
-        margin: auto;
-    }
-    h1{
-        font-size: 7vw;
-    }
-    header img{
-        height: 7vw;
-    }
-    main{
-        margin: 1vw 0 1vw 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
-    div.card{
-        margin: 1.5vw;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content:space-around;
-        width: 45vw;
-        height: 60vw;
-        font-size: 4.5vw;
-        text-align: center;
-        border-radius: 4%;
-        border: solid 0.5vw white;
-    }
-    div.card:hover{
-        border: solid 0.5vw yellow;
-        background-color: rgb(56, 82, 223);
-        color: white;
-    }
-    div.card .name{
-        font-weight: bold;
-    }
-    div.card .info{
-        margin: auto;
-    }
-    div.card img{
-        margin: auto;
-        height: 40vw;
-        width: 40vw;
-        border-radius: 3%;
-        border: solid 0.2vw rgb(0, 94, 255);
-    }
-    div.card .class{
-        font-size: 3vw;
-    }
-    footer a{
-        bottom: 0;
-        margin: auto;
-        font-size: 5vw;
-    }
-    .exitButton{
-        text-decoration: none;
-    }
-    div.completeInfo{
-        color: white;
-        font-size: 5vw;
-    }
-    div.completeInfo .introduction{
-        width: 90vw;
-        display: flex;
-        justify-content: center;
-    }
-    div.completeInfo img{
-        margin: auto;
-        height: 30vw;
-        width: 30vw;
-        border-radius: 5%;
-        border: solid 0.4vw rgb(192, 196, 54);
-    }
-    div.completeInfo .info{
-        margin: auto auto auto 1.5vw;
-    }
-    div.completeInfo .socialNetworks{
-        width: 90vw;
-        display: flex;
-        justify-content: space-evenly;
-        margin: 4vw;
-    }
-    div.completeInfo .socialNetworks img{
-        border: solid 0.3vw blue;
-        border-radius: 13%;
-        height: 20vw;
-        width: 20vw;
-    }
-    div.githubApi{
-        background-color: aliceblue;
-        color: rgb(2, 2, 173);
-        font-size: 4vw;
-        padding: 2vw;
-        margin: 1vw;
-        border: solid 0.5vw gray;
-    }
-    div.githubApi button{
-        font-size: 2.7vw;
-        padding: 0.1vw;
-        background-color: rgb(93, 93, 93);
-        color: white;
-        padding: 0.2vw;
-        border-radius: 4%;
-        min-width: 25vw;
-    }
-    div.githubApi button:hover{
-        background-color: blue;
-        cursor: pointer;
-    }
-    div.repositoryList{
-        display: flex;
-        flex-direction: column;
-    }
-    h2{
-        text-align: center;
-        font-size: 5vw;
-        margin-bottom: 3vw;
-    }
-    .repositoryList section{
-        display: flex;
-        justify-content: space-between;
-        margin: 1vw;
-        border: solid 0.14vw;
-    }
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+header,
+footer {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 40px -24px rgba(15, 23, 42, 0.45);
+  display: flex;
+  justify-content: center;
+  padding: clamp(1rem, 2.2vw, 2rem);
+}
+
+header .brand,
+header div {
+  align-items: center;
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+header img {
+  height: clamp(2.5rem, 8vw, 4rem);
+  width: auto;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent-strong);
+}
+
+main {
+  display: grid;
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 32px -20px rgba(15, 23, 42, 0.55);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.75rem 1.5rem;
+  position: relative;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card::after {
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  position: absolute;
+  transition: opacity var(--transition);
+  z-index: 0;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 30px 45px -25px rgba(15, 23, 42, 0.6);
+}
+
+.card:hover::after {
+  background: var(--accent-soft);
+  opacity: 1;
+}
+
+.card img {
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 32px -22px rgba(15, 23, 42, 0.65);
+  height: clamp(180px, 24vw, 220px);
+  object-fit: cover;
+  width: 100%;
+  z-index: 1;
+}
+
+.card .info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.card .name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+}
+
+.card .speciality,
+.card .class {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.card .class {
+  font-weight: 500;
+}
+
+.completeInfo {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 32px 48px -32px rgba(15, 23, 42, 0.55);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: clamp(1.75rem, 3vw, 3.25rem);
+}
+
+.completeInfo .introduction {
+  align-items: center;
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
+}
+
+.completeInfo img {
+  border: 4px solid var(--accent);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 48px -30px rgba(15, 23, 42, 0.55);
+  height: clamp(220px, 25vw, 280px);
+  object-fit: cover;
+  width: 100%;
+}
+
+.completeInfo .info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.completeInfo .info .name {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.completeInfo .socialNetworks {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 2vw, 2.5rem);
+  justify-content: center;
+}
+
+.completeInfo .socialNetworks a {
+  align-items: center;
+  background: var(--surface-alt);
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.completeInfo .socialNetworks a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px -22px rgba(15, 23, 42, 0.55);
+}
+
+.completeInfo .socialNetworks img {
+  height: clamp(56px, 8vw, 72px);
+  width: clamp(56px, 8vw, 72px);
+  object-fit: contain;
+}
+
+.githubApi {
+  background: var(--surface-alt);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.githubApi h2 {
+  color: var(--accent-strong);
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  text-align: center;
+}
+
+.githubApi button {
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.65rem 1.75rem;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.githubApi button:hover {
+  background: var(--accent-strong);
+  box-shadow: 0 12px 24px -20px rgba(37, 99, 235, 0.9);
+  transform: translateY(-2px);
+}
+
+.repositoryList {
+  display: grid;
+  gap: 1rem;
+}
+
+.repositoryList section {
+  align-items: center;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 14px 32px -26px rgba(15, 23, 42, 0.45);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  gap: 1rem;
+}
+
+.repositoryList section div {
+  color: var(--text-primary);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.exitButton {
+  text-decoration: none;
+}
+
+footer a {
+  color: var(--accent-strong);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  body {
+    padding: clamp(1.25rem, 4vw, 2.25rem);
+  }
+
+  .completeInfo .introduction {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .completeInfo .info {
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    gap: 1.5rem;
+  }
+
+  header,
+  footer {
+    border-radius: var(--radius-md);
+  }
+
+  header img {
+    height: clamp(2rem, 12vw, 3rem);
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1.25rem 1.15rem 1.5rem;
+  }
+
+  .card img {
+    height: clamp(200px, 55vw, 240px);
+  }
+
+  .repositoryList section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .githubApi button {
+    width: 100%;
+  }
 }
